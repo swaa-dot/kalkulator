@@ -1,5 +1,5 @@
 let currentDisplay = '0';
-const display = document.getElementById('id');
+const display = document.getElementById('display');
 
 function updateDisplay(){
     display.textContent = currentDisplay;
