@@ -36,6 +36,11 @@
         let currentDisplay = '0';
         const display = document.getElementById('display');
 
+        function Validation(expression) {
+            const validChars = /^[0-9+\-*/.()x\s]+$/;
+            return validChars.test(expression);
+        }
+
         function updateDisplay() {
             display.textContent = currentDisplay;
         }
@@ -56,9 +61,9 @@
 
         function backspace() {
             if (currentDisplay.length > 1) {
-                currentDisplay = '0';
+                currentDisplay = currentDisplay.slice(0, - 1);
             } else {
-                currentDisplay = currentDisplay.slice(0. - 1);
+                currentDisplay = '0';
             }
             updateDisplay();
         }
@@ -66,11 +71,14 @@
         function calculate() {
             try {
                 currentDisplay = currentDisplay.replace(/x/g, '*');
+                if(!validation(currentDisplay)){
+                    throw new Error('Error bangg, input gak valid');
+                }
                 const result = eval(currentDisplay);
                 currentDisplay = result.toString();
                 updateDisplay();
             } catch (error) {
-                currentDislay = 'error';
+                currentDisplay = 'error bang';
                 updateDisplay();
                 setTimeout(clearDisplay, 1000);
             }
