@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width, initial-scale=10">
+    <meta name="viewport" content="width=device-width, initial-scale=10">
     <title>Kalkulator Sederhana</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,7 +13,7 @@
         <div class="buttons">
             <button class="clear" onclick="clearDisplay()">C</button>
             <button class="operator" onclick="appendtoDisplay('/')">/</button>
-            <button class="operator" onclick="appendtoDisplay('*')">x</button>
+            <button class="operator" onclick="appendtoDisplay('x')">x</button>
             <button class="clear" onclick="backspace()">backspace</button>
             <button onclick="appendtoDisplay('7')">7</button>
             <button onclick="appendtoDisplay('8')">8</button>
@@ -74,6 +74,7 @@
                 if(!Validation(currentDisplay)){
                     throw new Error('Error bangg, input gak valid');
                 }
+
                 const result = eval(currentDisplay);
                 currentDisplay = result.toString();
                 updateDisplay();
@@ -86,7 +87,3 @@
         updateDisplay();
     </script>
 </body>
-
-<footer>
-
-</footer>
