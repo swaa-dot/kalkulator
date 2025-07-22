@@ -52,7 +52,7 @@ button:active {
 }
 
 .operator {
-    background-color: blue;
+    background-color: #3e61fc;
 }
 
 .operator:hover {
@@ -69,7 +69,7 @@ button:active {
 }
 
 .clear {
-    background-color: red;
+    background-color: rgb(234, 49, 49);
 }
 .clear:hover {
     background-color: darkred;
