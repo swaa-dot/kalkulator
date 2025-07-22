@@ -71,7 +71,7 @@
         function calculate() {
             try {
                 currentDisplay = currentDisplay.replace(/x/g, '*');
-                if(!validation(currentDisplay)){
+                if(!Validation(currentDisplay)){
                     throw new Error('Error bangg, input gak valid');
                 }
                 const result = eval(currentDisplay);
